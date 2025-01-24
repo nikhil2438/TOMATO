@@ -8,11 +8,13 @@ import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+
   return (
     <>
       {showLogin ? <LoginPopup /> : <></>}
       <div className="app">
-        <Navbar />
+        <Navbar setShowLogin={setShowLogin} />
+        {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />

@@ -5,7 +5,6 @@ const Footer = () => {
   return (
     <div className="footer bg-gray-800 text-white py-8" id="footer">
       <div className="footer-content max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Left Section */}
         <div className="footer-content-left">
           <img src={assets.logo} alt="Logo" className="mb-4 w-32" />
           <p className="text-sm leading-relaxed">
@@ -32,7 +31,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Center Section */}
         <div className="footer-content-center">
           <h2 className="text-lg font-semibold mb-4">COMPANY</h2>
           <ul className="space-y-2">
@@ -43,7 +41,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Right Section */}
         <div className="footer-content-right">
           <h2 className="text-lg font-semibold mb-4">GET IN TOUCH</h2>
           <ul className="space-y-2">

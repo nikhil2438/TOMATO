@@ -3,13 +3,15 @@ import logo from "../assets/logo.png";
 import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("menu");
 
   return (
     <div className="navbar flex items-center justify-between p-4">
       <div className="navbar-logo">
-        <img src={logo} alt="Logo" className="h-8s" />
+        <Link to="/">
+          <img src={logo} alt="Logo" className="h-8" />
+        </Link>
       </div>
 
       <div className="navbar-menu flex">
@@ -55,10 +57,18 @@ const Navbar = () => {
       <div className="navbar-right flex items-center gap-10">
         <img src={assets.search_icon} alt="Search Icon" className="h-6" />
         <div className="navbar-search-icon relative">
-          <img src={assets.basket_icon} alt="Basket Icon" className="h-6" />
+          <Link to="/cart">
+            <img src={assets.basket_icon} alt="Basket Icon" className="h-6" />
+          </Link>
           <div className="dot absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></div>
         </div>
-        <button className="sign-in-button text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+        <button
+          className="sign-in-button text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600"
+          onClick={() => {
+            console.log("Sign In Clicked");
+            setShowLogin(true);
+          }}
+        >
           Sign In
         </button>
       </div>
