@@ -7,7 +7,10 @@ const FoodDisplay = ({ category }) => {
   return (
     <div className="food-display" id="food-display">
       <h2 className="text-2xl font-bold mt-4">Top dishes near you</h2>
-      <div className="food-display-list   grid grid-cols-4 gap-6 ">
+      <div
+        className="food-display-list   grid grid-cols-4 gap-6
+       "
+      >
         {food_list.map((item, index) => {
           return (
             <Fooditem

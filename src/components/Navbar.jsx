@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("menu");
@@ -13,38 +14,41 @@ const Navbar = () => {
 
       <div className="navbar-menu flex">
         <ul className="flex gap-6 text-2xl font-semibold">
-          <li
+          <Link
             className={`cursor-pointer ${
               menu === "home" ? "text-blue-500 underline" : ""
             }`}
             onClick={() => setMenu("home")}
           >
             home
-          </li>
-          <li
+          </Link>
+          <a
+            href="#explore-menu"
             className={`cursor-pointer ${
               menu === "menu" ? "text-blue-500 underline" : ""
             }`}
             onClick={() => setMenu("menu")}
           >
             menu
-          </li>
-          <li
+          </a>
+          <a
+            href="#app-download"
             className={`cursor-pointer ${
               menu === "mobile-app" ? "text-blue-500 underline" : ""
             }`}
             onClick={() => setMenu("mobile-app")}
           >
             mobile-app
-          </li>
-          <li
+          </a>
+          <a
+            href="#footer"
             className={`cursor-pointer ${
               menu === "contact us" ? "text-blue-500 underline" : ""
             }`}
             onClick={() => setMenu("contact us")}
           >
             contact us
-          </li>
+          </a>
         </ul>
       </div>
 
